@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <ng-progress [color]="'green'" [spinner]="false" [thick]="true"></ng-progress>
+    <!--<app-header *ngIf="router!='/login'"></app-header>-->
+    <app-header *ngIf="this.IsVisible"></app-header>
+
+    <app-menu></app-menu>
+    <!-- <app-sidebar></app-sidebar> -->
+    <div class="ui-fluid">
+        <!--Globar error messaging-->
+        <app-messages></app-messages>
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>

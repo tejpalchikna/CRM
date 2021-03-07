@@ -1,0 +1,111 @@
+﻿<div class="box box-solid">
+    <div class="box-header with-border">
+        <h4 class="box-title">{{selectedContact==undefined ? 'Create' : 'Edit'}} Contact</h4>
+    </div>
+    <form class="form-horizontal" (ngSubmit)="createOrEditContact()" autocomplete="off" #contactForm="ngForm">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="name">First Name</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="FirstName" placeholder="First Name" [(ngModel)]="selectContactCopy.FirstName" name="FirstName" required />
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="name">Last Name</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="LastName" placeholder="Last Name" [(ngModel)]="selectContactCopy.LastName" name="LastName" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="contacts">Designation</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <p-dropdown [(ngModel)]="selectContactCopy.Designation" name="Designation" [options]="selectContactCopy.DesignationList" placeholder="Choose Designation"></p-dropdown>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="contacts">Organization</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <p-dropdown [(ngModel)]="selectContactCopy.Organization" name="Organization" [options]="selectContactCopy.OrganizationList" placeholder="Choose Organization"></p-dropdown>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="name">Email </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="Email" placeholder="Email" [(ngModel)]="selectContactCopy.Email" name="Email" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="name">Alternate Email </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="AlternateEmail" placeholder="Alternate Email" [(ngModel)]="selectContactCopy.AlternateEmail" name="AlternateEmail" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="name">Mobile Number </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="MobileNbr" placeholder="Mobile Number" [(ngModel)]="selectContactCopy.MobileNbr" name="MobileNbr" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="name">Alternate Mobile Number </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="AlternateMobile" placeholder="Alternate Mobile Number" [(ngModel)]="selectContactCopy.AlternateMobile" name="AlternateMobile" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="name">DOB  </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="DOB" placeholder="Date of Birth" [(ngModel)]="selectContactCopy.DOB" name="DOB" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="name">Anniversary </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="Anniversary" placeholder="Anniversary" [(ngModel)]="selectContactCopy.Anniversary" name="Anniversary" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="contacts">City</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <p-dropdown [(ngModel)]="selectContactCopy.City" name="City" [options]="selectContactCopy.CityList" placeholder="Choose City"></p-dropdown>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="contacts">State</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <p-dropdown [(ngModel)]="selectContactCopy.State" name="State" [options]="selectContactCopy.StateList" placeholder="Choose State"></p-dropdown>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <label for="name">Country</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <p-dropdown [(ngModel)]="selectContactCopy.Country" name="Country" [options]="selectContactCopy.CountryList" placeholder="Choose Country"></p-dropdown>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div class="text-right">
+                <button type="button" value="Reset" class="btn btn-default mr-sm" (click)="closeUpdateContacts()">Cancel</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">{{selectedContact==undefined ? 'Create' : 'Edit'}} Contact</button>
+            </div>
+        </div>
+    </form>
+</div>

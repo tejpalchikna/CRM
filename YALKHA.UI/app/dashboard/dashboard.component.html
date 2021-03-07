@@ -1,0 +1,184 @@
+﻿<!-- Content Wrapper. Contains page content -->
+<div>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Dashboard
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#" [routerLink]="['/home']"><i class="fa fa-home"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <!-- <h3>{{numberReceivedToday != undefined ? numberReceivedToday : '--'}}</h3> -->
+                        <h3>100000</h3>
+                        <p>Total Emails Limit</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-edit"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" [routerLink]="['/reports/inventory']"
+                       [queryParams]="{processCode: receivedAssetStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <!-- <h3>{{numberRepairedToday != undefined ? numberRepairedToday : '--'}}</h3> -->
+                        <h3>50000</h3>
+                        <p>Pending Emails Limit </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-wrench"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" [routerLink]="['/reports/inventory']"
+                       [queryParams]="{processCode: totalRepairsStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <!-- <h3>{{numberNonConformants != undefined ? numberNonConformants : '--'}}</h3> -->
+                        <h3>20</h3>
+                        <p>Failed Emails</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-file-alt"></i>
+                    </div>
+                    <a href="#" [routerLink]="['/reports/inventory']" [queryParams]="{processCode: nonConformantStatus}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <!-- <h3>{{numberShippedToday != undefined ? numberShippedToday : '--'}}</h3> -->
+                        <h3>1-Sep-2020</h3>
+                        <p>Last Activity</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-stumbleupon"></i>
+                    </div>
+                    <a href="#" [routerLink]="['/reports/inventory']" class="small-box-footer"
+                       [queryParams]="{processCode: shippedAssetStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <!-- </section> -->
+    <!-- <section class="content-header">
+        <h4>
+            User Activity
+        </h4>
+    </section> -->
+
+    <!-- <section class="content"> -->
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-teal">
+                    <div class="inner">
+                        <!-- <h3>{{numberReceivedToday != undefined ? numberReceivedToday : '--'}}</h3> -->
+                        <h3>100</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-address-book"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" [routerLink]="['/reports/inventory']"
+                       [queryParams]="{processCode: receivedAssetStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-blue">
+                    <div class="inner">
+                        <!-- <h3>{{numberRepairedToday != undefined ? numberRepairedToday : '--'}}</h3> -->
+                        <h3>20</h3>
+                        <p>Active Users </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user-check"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" [routerLink]="['/reports/inventory']"
+                       [queryParams]="{processCode: totalRepairsStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-olive">
+                    <div class="inner">
+                        <!-- <h3>{{numberNonConformants != undefined ? numberNonConformants : '--'}}</h3> -->
+                        <h3>3</h3>
+                        <p>New Users</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-user-tie"></i>
+                    </div>
+                    <a href="#" [routerLink]="['/reports/inventory']" [queryParams]="{processCode: nonConformantStatus}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-maroon">
+                    <div class="inner">
+                        <!-- <h3>{{numberShippedToday != undefined ? numberShippedToday : '--'}}</h3> -->
+                        <h3>15-Sep-2020</h3>
+                        <p>Last Campaign</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-ad"></i>
+                    </div>
+                    <a href="#" [routerLink]="['/reports/inventory']" class="small-box-footer"
+                       [queryParams]="{processCode: shippedAssetStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-navy">
+                    <div class="inner">
+                        <!-- <h3>{{numberReceivedToday != undefined ? numberReceivedToday : '--'}}</h3> -->
+                        <h3>18-Sep-2020</h3>
+                        <p>Next Campaign </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-calendar-times"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" [routerLink]="['/reports/inventory']"
+                       [queryParams]="{processCode: receivedAssetStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-purple">
+                    <div class="inner">
+                        <!-- <h3>{{numberRepairedToday != undefined ? numberRepairedToday : '--'}}</h3> -->
+                        <h3>Good</h3>
+                        <p>System Health </p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-shield-alt"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" [routerLink]="['/reports/inventory']"
+                       [queryParams]="{processCode: totalRepairsStatus , startDateUtcString: todayStartIsoString, endDateUtcString: todayEndIsoString}">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

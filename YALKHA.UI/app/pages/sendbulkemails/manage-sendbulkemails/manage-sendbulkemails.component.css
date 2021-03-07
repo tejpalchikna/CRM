@@ -1,0 +1,16 @@
+.p-autocomplete {
+    width: 100%;
+}
+
+p-dialog .ui-dialog {
+    overflow: scroll;
+    max-height: 70%;
+}
+
+.ui-dialog-content {
+    max-height: 500px;
+    min-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 15px;
+}

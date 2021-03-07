@@ -1,0 +1,155 @@
+﻿<div class="box box-solid">
+    <div class="box-header with-border">
+        <h4 class="box-title">{{selectedUser==undefined ? 'Create' : 'Edit'}} User</h4>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-11">
+                <form class="form-horizontal" (ngSubmit)="createOrEditUser()" autocomplete="off" #roleForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Role</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="ui-fluid">
+                                        <p-autoComplete [(ngModel)]="selectUserCopy.Role" name="RoleName" [suggestions]="filterRoleResults" field="name"
+                                                        (completeMethod)="getRoles($event)" [forceSelection]="true" [dropdown]="true" required>
+                                        </p-autoComplete>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Facility</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="ui-fluid">
+                                        <p-autoComplete [(ngModel)]="selectUserCopy.Facility" name="Facility" [suggestions]="filterFacilityResults" field="name"
+                                                        (completeMethod)="getFacilities($event)" [forceSelection]="true" [dropdown]="true" required>
+                                        </p-autoComplete>
+                                    </div>
+                                    <!--<p-dropdown [options]="selectUserCopy.FacilityList" class="form-control" [(ngModel)]="selectUserCopy.FacilityId" name="UserName" id="UserName" required></p-dropdown>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">User Status</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="ui-fluid">
+                                        <p-autoComplete [suggestions]="filterStatusResults" [(ngModel)]="selectUserCopy.Status" name="UserStatus" field="name"
+                                                        (completeMethod)="getStatuses($event)"  [forceSelection]="true" [dropdown]="true" required></p-autoComplete>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Title</label>
+                                </div>
+                                <div class="ui-fluid">
+                                    <div class="col-md-7">
+                                        <p-autoComplete [suggestions]="filterTitleResults" [(ngModel)]="selectUserCopy.Title" name="Title" id="Title" field="name"
+                                                        (completeMethod)="getTitles($event)" [forceSelection]="true" [dropdown]="true" required></p-autoComplete>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">First Name</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name" [(ngModel)]="selectUserCopy.FirstName" name="FirstName" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Last Name</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="LastName" placeholder="Last Name" [(ngModel)]="selectUserCopy.LastName" name="LastName" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Phone No.</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="PhoneNo" placeholder="Phone No." [(ngModel)]="selectUserCopy.PhoneNo" name="PhoneNo" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Email</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" id="UserEmail" placeholder="Email" [(ngModel)]="selectUserCopy.Email" name="Email" autocomplete="off" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="selectedUser!=undefined">
+                        <div class="col-md-6">
+                            <div class="form-check">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" [(ngModel)]="resetPassword" name="resetPassword"> <b>Reset Password</b>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="selectedUser==undefined || resetPassword">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Password</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="password" class="form-control" id="UserPassword" placeholder="Password" [(ngModel)]="selectUserCopy.Password" name="Password" autocomplete="off" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label for="name">Confirm Password</label>
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" [(ngModel)]="selectUserCopy.ConfirmPassword" name="ConfirmPassword" autocomplete="off" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <div class="text-right">
+            <button type="button" value="Reset" class="btn btn-default mr-sm" (click)="closeUpdateUsers()">Cancel</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!roleForm.form.valid" (click)="createOrEditUser()">{{selectedUser==undefined ? 'Add New' : 'Update'}} User</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,295 @@
+﻿body .ui-widget, body .ui-widget .ui-widget, body .ui-widget input, body .ui-widget select, body .ui-widget textarea, body .ui-widget button{
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.ng-valid:not(form) input[type=text]:required.ui-inputtext, .ng-valid:not(form) input[type=text].required.ui-inputtext, .ng-valid:not(form) ul.ui-inputtext, .form-group .ng-valid .ui-dropdown {
+    border-left-color: #42A948; /* Valid (green) */
+}
+
+.ng-invalid:not(form) input[type=text].ui-inputtext, .ng-invalid:not(form) ul.ui-inputtext, .form-group .ng-invalid .ui-dropdown, .form-group .ng-valid .ui-dropdown:hover {
+    border-left-color: #a94442; /* Invalid (red) */
+}
+
+.ng-invalid:not(form) input[type=text]:focus.ui-inputtext, .ng-invalid:not(form) input[type=text]:focus.ui-inputtext, .ng-invalid:not(form) ul.ui-inputtext.ui-state-focus, .form-group .ng-invalid .ui-dropdown.ui-state-focus, .form-group .ng-valid .ui-dropdown.ui-state-focus {
+    border-left-color: #3c8dbc; /* Focused (light blue) */
+}
+
+/*Reset color to default bootstrap color*/
+body .ng-invalid.ng-dirty input[type=text].ui-inputtext:not(:focus), .ng-valid input[type=text].ui-inputtext:not(:focus), .ng-dirty.ng-invalid ul.ui-inputtext:not(.ui-state-focus) {
+    border-bottom-color: #d2d6de !important;
+}
+
+body input[type=text].ng-dirty.ng-invalid .ui-inputtext:focus, .ng-dirty.ng-invalid ul.ui-inputtext.ui-state-focus {
+    border-color: #3c8dbc;
+}
+
+body .ui-autocomplete-multiple-container li.ui-autocomplete-token {
+    margin: 1px;
+}
+
+.ng-invalid:not(form) input[type=text].ui-inputtext, .ng-invalid:not(form) ul.ui-inputtext, .ng-valid:not(form) ul.ui-inputtext, .form-group .ng-invalid .ui-dropdown, .form-group .ng-valid .ui-dropdown
+{
+    border-left-width: 5px;
+    line-height: 20px;
+    display: inline-block;
+}
+
+.box > .list-group{
+  margin-bottom: 0;
+}
+.box > .list-group .list-group-item{
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.box > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.box > .list-group:last-child .list-group-item:last-child{
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+body .wrapper input.ui-inputtext {
+    height: 34px;
+    line-height: 1.42857143;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+body .wrapper .ui-corner-all {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+body .ui-autocomplete .ui-autocomplete-dropdown {
+    border-left: 0;
+}
+
+.ui-table .ui-paginator-bottom, .ui-table ui-paginator-top {
+    border: 0 none;
+}
+
+body .ui-state-disabled, body .ui-widget:disabled {
+    opacity: 1;
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+
+body .ui-autocomplete .ui-autocomplete-dropdown {
+    color: black;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-left-width: 0;
+}
+
+body .ui-fluid .ui-autocomplete .ui-autocomplete-dropdown.ui-button {
+    height: 34px;
+}
+
+body .ui-autocomplete .ui-autocomplete-dropdown:active, body .ui-autocomplete .ui-autocomplete-dropdown:hover {
+	background-color: #e6e6e6;
+}
+
+.ui-fluid .ui-multiselect {
+	padding: 0em .75em;
+	border: 1px solid #d2d6de;
+}
+
+.ui-multiselect-label, .ui-multiselect-panel .ui-multiselect-item label {
+    font-weight: normal;
+}
+
+.ui-multiselect-panel .ui-multiselect-item label {
+    font-weight: normal;
+    margin-bottom: auto;
+}
+
+.ui-multiselect-header .ui-multiselect-filter-container .pi, .ui-multiselect-header .ui-multiselect-close {
+    top:10px;
+}
+
+.fixed .content-wrapper {
+	padding-bottom: 2.5em;
+}
+
+.ui-table .ui-table-tbody >tr>td, .ui-table .ui-table-tfoot, .ui-table-wrapper .ui-table-thead tr, .ui-table .ui-sortable-column {
+	background-color:white;
+	border: 1px solid #f4f4f4;
+	color:#000;
+}
+
+.ui-paginator .ui-state-disabled, .ui-state-disabled .pi {
+	cursor: not-allowed !important;
+}
+
+body .ui-paginator .ui-paginator-icon{
+    position:initial;
+    display:inline-block;
+    left:auto;
+    right:auto;
+    margin-top:auto;
+    margin-left:auto;
+}
+
+.ui-paginator .ui-paginator-pages .ui-paginator-page {
+	color: #666;
+	margin-left: 0;
+	margin-right: 0;
+	border: thin solid #ddd;
+}
+
+.ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-pages, .ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-prev, .ui-paginator .ui-paginator-current {
+    height: auto;
+    width: auto;
+}
+
+.ui-paginator-element.ui-state-active {
+	background-color: #337ab7;
+	border-color: #337ab7;
+	color: #fff !important;
+}
+
+.ui-paginator-element {
+	color: #666 !important;
+	border: thin solid #ddd;
+	margin: 0;
+}
+
+.ui-paginator-bottom, ui-paginator-top {
+    text-align: right;
+    padding: .5em !important;
+    border: 0 none;
+}
+
+app-open-shipments .ui-paginator-bottom, app-shipped-shipments .ui-paginator-bottom {
+    padding: .5em 0 !important;
+    text-align: center;
+}
+
+app-open-shipments .ui-paginator-top, app-shipped-shipments .ui-paginator-top {
+    padding: .5em 0 !important;
+    text-align: center;
+}
+
+.ui-paginator .ui-paginator-left-content {
+	float: left;
+	margin: .5%;
+}
+
+body .ui-inputtext {
+	border: thin solid #d2d6de;
+	width: 100%;
+}
+
+.ui-sortable-column .glyphicon-sort {
+	color: #aaa;
+}
+
+.ui-sidebar {
+    padding: .5em 0;
+    overflow-y: auto;
+}
+
+.ui-sidebar-close {
+	display: none;
+}
+
+.ui-sidebar-active.ui-sidebar-right {
+	z-index: 1500 !important;
+}
+
+.ui-widget-overlay.ui-sidebar-mask {
+	z-index: 1029 !important;
+}
+
+.ui-growl {
+    top: 8% !important;
+    right:auto;
+    left:20px;
+	z-index: 1501 !important;
+}
+
+.ui-sidebar-right .box.box-default {
+	border-top: hidden;
+}
+
+.ui-table .ui-sortable-column .fa-unsorted:before, .ui-table .ui-sortable-column .fa-sort:before {
+	font-family: 'Glyphicons Halflings';
+	content: "\e150";
+	opacity: 0.2;
+}
+
+.ui-table .ui-sortable-column .fa-sort-down:before, .ui-table .ui-sortable-column .fa-sort-desc:before {
+	font-family: 'Glyphicons Halflings';
+	content: "\e156";
+	opacity: 0.5;
+}
+
+.ui-table .ui-sortable-column .fa-sort-up:before, .ui-table .ui-sortable-column .fa-sort-asc:before {
+	font-family: 'Glyphicons Halflings';
+	content: "\e155";
+	opacity: 0.5;
+}
+
+body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev::before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e257";
+    opacity: 0.5;
+}
+
+body .ui-datepicker .ui-datepicker-header .ui-datepicker-next::before
+{
+    font-family: 'Glyphicons Halflings';
+    content: "\e258";
+    opacity: 0.5;
+}
+
+body .ui-calendar .ui-datepicker {
+    width: 17em;
+    min-width: initial;
+}
+
+body .ui-datepicker table td.ui-datepicker-other-month a {
+    color:#777;
+}
+
+body .ui-dropdown {
+	width: 100% !important;
+}
+
+body .ui-fluid .ui-paginator .ui-dropdown{
+    width:auto !important;
+}
+
+body .ui-radiobutton .ui-radiobutton-box .ui-radiobutton-icon {
+	position: absolute;
+	top: 50%;
+}
+
+.fa-close:before {
+    content: "\f00d";
+}
+
+.ui-overlaypanel-content{
+    width:550px;
+    height:300px;
+    overflow:scroll;
+}
+
+.ui-fluid .ui-button-text-icon-left .ui-button-text, .ui-fluid .ui-button-text-icon-right .ui-button-text {
+    padding-left: 1.5em !important;
+}
+
+.ui-fileupload-row > div:first-child {
+    display: none;
+}
+
+.ui-fileupload-row > div:nth-child(2) {
+    padding-left: 0px !important;
+}

@@ -1,0 +1,25 @@
+﻿<div *ngIf="isLoggedIn">
+    <div *ngIf="isMenusLoaded">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default" role="navigation">
+                    <p [innerHTML]="sameAsHtml(menuItem==null?'': menuItem.m_StringValue)"></p>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown userdropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Welcome {{globalVar.displayName}} !<span class="caret"></span>&nbsp;&nbsp;</a>
+                            <ul class="dropdown-menu">
+                                <li *ngFor="let itemdata of globalVar.roleList">
+                                    <a href="">{{itemdata.RoleName}}</a>
+                                </li>
+                                <li class=""><a href="#/home/changepassword">Change Password</a></li>
+                                <li>
+                                    <a (click)="Logout()">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

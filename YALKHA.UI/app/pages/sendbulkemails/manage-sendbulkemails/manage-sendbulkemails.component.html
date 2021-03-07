@@ -1,0 +1,98 @@
+﻿<div class="box box-solid">
+    <div class="box-header with-border">
+        <h4 class="box-title">Send Mail</h4>
+    </div>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-horizontal" (ngSubmit)="createOrEditSendBulkEmail()" autocomplete="off" #sendbulkemailForm="ngForm">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="FromEmail" placeholder="From Email" [(ngModel)]="selectSendBulkEmailCopy.FromEmail" name="FromEmail" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="EmailSubject" placeholder="Email Subject" [(ngModel)]="selectSendBulkEmailCopy.EmailSubject" name="EmailSubject" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea rows="5" class="form-control" id="ToEmail" placeholder="Email List" [(ngModel)]="selectSendBulkEmailCopy.ToEmail" name="ToEmail" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <textarea rows="5" class="form-control" id="ResponseMessage" [(ngModel)]="selectSendBulkEmailCopy.ResponseMessage" name="ResponseMessage" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-6">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="SenderName" placeholder="Name" [(ngModel)]="selectSendBulkEmailCopy.SenderName" name="SenderName" required />
+                                </div>
+                            </div>
+                            <!-- <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="Password" placeholder="Email Password" [(ngModel)]="selectSendBulkEmailCopy.Password" name="Password" required />
+                                </div>
+                            </div> -->
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <p-editor id="EmailBody" placeholder="Email Body" name="EmailBody" [(ngModel)]="selectSendBulkEmailCopy.EmailBody" required [style]="{'height':'200px'}">
+                                        <ng-template pTemplate="header">
+                                            <span class="ql-formats">
+                                            <button type="button" class="ql-bold" aria-label="Bold"></button>
+                                            <button type="button" class="ql-italic" aria-label="Italic"></button>
+                                            <button type="button" class="ql-underline" aria-label="Underline"></button>
+                                        </span>
+                                        </ng-template>
+                                    </p-editor>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col-sm-2">
+                                        Mail Priority
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="ui-fluid">
+                                            <p-dropdown [(ngModel)]="selectSendBulkEmailCopy.MailPriority" name="MailPriority" [options]="selectSendBulkEmailCopy.MailPriorityList" placeholder="Select Mail Priority"></p-dropdown>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        Sleep Timer
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p-dropdown [(ngModel)]="selectSendBulkEmailCopy.SleepTimer" name="SleepTimer" [options]="selectSendBulkEmailCopy.SleepTimerList" placeholder="Select Sleep Timer" required>
+                                        </p-dropdown>
+                                    </div>
+                                    <!-- <div class="col-sm-4">
+                                        <div class="col-sm-4">
+                                            <p-dropdown [(ngModel)]="selectSendBulkEmailCopy.ToEmail" name="ToEmail" [options]="selectSendBulkEmailCopy.ToEmailList" placeholder="Select">
+                                            </p-dropdown>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <div class="text-right">
+            <button type="button" value="Reset" class="btn btn-default mr-sm" (click)="closeUpdateSendBulkEmails()">Cancel</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!sendbulkemailForm.form.valid" (click)="createOrEditSendBulkEmail()">Send Mail</button>
+        </div>
+    </div>
+</div>

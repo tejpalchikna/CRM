@@ -1,0 +1,88 @@
+@media screen and (max-width: 673px) {
+    .user-margin {
+        margin-top: 18px !important;
+    }
+}
+
+.user-margin {
+    margin-top: 110px;
+}
+
+.active {
+    background-color: black !important;
+}
+
+#divLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, .7);
+    content: 'Please wait.....';
+}
+
+.loading {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
+    display: block;
+    color: black;
+}
+
+td,
+th {
+    white-space: nowrap;
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+.form-group {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.panel {
+    margin-bottom: 5px;
+}
+
+.panel-heading {
+    padding: 8px 8px;
+}
+
+table.dataTable {
+    margin-top: 0px !important;
+}
+
+.panel-footer {
+    padding: 5px 15px;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    margin-bottom: 5px;
+}
+
+.alert {
+    padding: 8px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.chosen-container {
+    width: 100% !important;
+}

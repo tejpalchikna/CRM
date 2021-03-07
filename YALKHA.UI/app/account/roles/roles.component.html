@@ -1,0 +1,91 @@
+ <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>Roles</h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active">Roles</li>
+    </ol>
+</section>
+<section class="content">
+    <div>
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <a class="btn btn-primary btn-sm pull-right" (click)="openCreateEditRole()" style="margin-top: -7px;"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add New Role</a>
+                <h4 class="box-title">Search Criteria</h4>
+            </div>
+            <div class="box-body">
+                <form autocomplete="off">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Role Name</label>
+                                <input class="form-control" type="text" [(ngModel)]="searchName" name="searchName">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <div>
+                                    <label>&nbsp;</label>
+                                </div>
+                                <button (click)="applyFilter()" class="btn btn-primary" type="submit">Apply</button>&nbsp;&nbsp;<button type="reset" class="btn btn-default">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="box box-solid">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-right">
+                            <button type="button" class="btn btn-default" (click)="exportCSV()" [disabled]="!roles || roles.length == 0"><i class="fa fa-download" aria-hidden="true"></i> Download as CSV File</button>
+                        </p>
+                    </div>
+                </div>
+                <p-table #rolesTable [columns]="cols" [value]="roles"  [responsive]="true" sortField="id" [autoLayout]="true" [paginator]="false" [rowsPerPageOptions]="defaultPageSizeOptions"
+                         [lazy]="true" (onLazyLoad)="getRolesLazy($event)" [totalRecords]="totalRecords" [globalFilterFields]="cols" [exportFunction]="getFormattedTextForExport" [paginatorPosition]="'both'" [exportFilename]="csvFileName" [scrollable]="true" [virtualScroll]="true" [virtualRowHeight]="20" scrollHeight="350px">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th class="header-names" *ngFor="let col of columns">
+                                {{col.header}}
+                            </th>
+                            <th class="header-names">Edit</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-columns="columns">
+                        <tr class="ng-star-inserted">
+                            <td *ngFor="let col of columns">
+                                {{rowData[col.field]}}
+                            </td>
+                            <td>
+                                <a class="btn" title="Edit Role {{rowData.CreatedBy}} {{rowData.Id}}" (click)="openEditRole(rowData)"><i class="fa fa-edit"></i></a>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="loadingbody" let-columns="columns">
+                        <tr style="height:34px">
+                            <td *ngFor="let col of columns">
+                                <div class="loading-text"></div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="footer">
+                        <tr *ngIf="totalRecords == 0">
+                            <td attr.colspan="{{cols.length+1}}">
+                                <span>No Results Found</span>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="paginatorleft" let-state>
+                        Showing {{state.first + 1}} to {{((state.page + 1) * state.rows) <= totalRecords ? ((state.page + 1)* state.rows) : ((state.page + 1) * state.rows) - (((state.page + 1) * state.rows) - totalRecords)}} of {{totalRecords}}
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+
+    <p-dialog header="Roles" [(visible)]="editCreateIsVisible" [contentStyle]="{'overflow':'visible'}" [modal]="true" [style]="{width: '600px', height: '400px'}">
+        <app-manage-roles [selectedRole]="role" (onRoleSaved)="onRoleSaved()" (onUpdateRoleClosed)="onUpdateRoleClosed()"></app-manage-roles>
+    </p-dialog>
+</section>
